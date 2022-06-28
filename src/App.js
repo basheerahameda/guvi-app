@@ -15,7 +15,7 @@ function App() {
 }
 
 function Welcome(props){
-  const name = "Vijay";
+  const name = "Basheer";
   return (
     <div>
     <img className="pic" src={props.pic} alt={props.name}/>
