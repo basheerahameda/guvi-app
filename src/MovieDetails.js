@@ -1,10 +1,14 @@
 import React from 'react';
 import { useParams, useNavigate } from "react-router-dom";
 
-export function MovieDetails({ movieList }) {
+export function MovieDetails({movieList}) {
   const { id } = useParams();
   const movieDetails = movieList[id];
   const navigate = useNavigate();
+
+  const ratingStyle = {
+    color: movieDetails.rating > 8 ? "green" : "red",
+  };
 
   return (
     <div>
@@ -12,7 +16,7 @@ export function MovieDetails({ movieList }) {
       <div className="movie-details-container">
         <div className="movie-specs">
           <h4>{movieDetails.name}</h4>
-          <p className="movie-rating">⭐{movieDetails.rating}</p>
+          <h4 style={ratingStyle} className="movie-rating">⭐{movieDetails.rating}</h4>
         </div>
 
         <p>{movieDetails.summary}</p>
