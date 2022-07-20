@@ -10,7 +10,7 @@ import Button from "@mui/material/Button";
 import { AddMovie } from "./AddMovie";
 import { NotFound } from "./NotFound";
 import { MovieDetails } from "./MovieDetails";
-import Drilling from "./propsDrilling";
+// import Drilling from "./propsDrilling";
 import Theme from "./theme";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
