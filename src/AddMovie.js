@@ -2,14 +2,17 @@ import React from "react";
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { Navigate, useNavigate } from "react-router-dom";
 
 
-export function AddMovie({ movieList, setMovieList }) {
+export function AddMovie() {
   const [name, setName] = useState("");
   const [poster, setPoster] = useState("");
   const [rating, setRating] = useState("");
   const [summary, setSummary] = useState("");
   const [trailer, setTrailer] = useState("");
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -36,8 +39,17 @@ export function AddMovie({ movieList, setMovieList }) {
     trailer: trailer,
   };
 
-  setMovieList([...movieList, newMovie]);
+  fetch("https://62ca71b41eaf3786ebab6f90.mockapi.io/movies", {
+    method: "POST",
+    body: JSON.stringify(newMovie),
+    headers: {
+      "Content-Type": "application/json"
+    },
+  }).then(() => navigate("/movies"));
+
+ // setMovieList([...movieList, newMovie]);
 }}
+// variant="contained"
 >Add movie</Button>
 
 </div>

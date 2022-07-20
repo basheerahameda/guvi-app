@@ -17,7 +17,9 @@
 
 .movie-container {
   /* background-color: orange; */
+  height: min-content;
   width: 340px;
+  border-radius: 0px;
 }
 
 .movie-poster {
